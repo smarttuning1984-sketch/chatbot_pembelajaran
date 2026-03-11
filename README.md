@@ -10,6 +10,8 @@ Chatbot bertenaga AI yang terintegrasi dengan dokumen dari Google Drive, dibangu
 - **Bahasa Indonesia**: Bot menjawab pertanyaan dalam Bahasa Indonesia dengan istilah teknis bengkel
 - **REST API**: Akses chatbot melalui API untuk integrasi ke aplikasi lain
 - **Self-Hosted**: Jalankan di server Anda sendiri dengan Docker
+- **🆕 Auto-Sync**: Continuous synchronization dengan auto-reconnect & resilience
+- **🆕 Parallel Processing**: 5-10x lebih cepat untuk ribuan file
 
 ## 📋 Prasyarat
 

@@ -51,20 +51,34 @@ Atau gunakan `.env.example` sebagai template.
 
 ## 🎯 Two Processing Options
 
-### Standard (Sequential) - Untuk < 100 file
+### Standard (Sequential) - Untuk Testing
 ```bash
 bash run.sh
 # Waktu: ~5 detik per file
 ```
 
-### Parallel (Optimized) - Untuk 100+ file ⚡
+### Parallel (Optimized) - Untuk 100-10,000 file ⚡
 ```bash
 python parallel_ingest.py --workers 5
 # 5-10x lebih cepat!
 # Dengan checkpoint & auto-resume
 ```
 
+### Auto-Sync (NEW!) - Untuk Continuous Sync 🔄
+```bash
+# Continuous monitoring & syncing dari Google Drive
+bash start-auto-sync.sh
+
+# Features:
+# ✓ Auto-detect file changes
+# ✓ Auto-reconnect on errors (exponential backoff)
+# ✓ Server health monitoring
+# ✓ State persistence & resume
+# ✓ Graceful shutdown
+```
+
 **Perlu tahu estimasi waktu?** Lihat [PERFORMANCE_QUICK_REF.md](PERFORMANCE_QUICK_REF.md)
+**Butuh continuous sync?** Lihat [AUTO_SYNC.md](AUTO_SYNC.md)
 
 ---
 
@@ -74,6 +88,9 @@ python parallel_ingest.py --workers 5
 |--------|---------|----------|
 | `run.sh` | Simple sequential ingestion | Testing, < 100 file |
 | `parallel_ingest.py` | Parallel processing (optimized) | 100-10000 file |
+| `auto_sync.py` | Continuous auto-sync | Production, ongoing sync |
+| `start-auto-sync.sh` | Start auto-sync with config | Easy startup |
+| `monitor-auto-sync.sh` | Monitor sync status | Check progress |
 | `check-dify.sh` | Verify Dify server status | Debugging |
 | `setup.sh` | Setup environment checker | First-time setup |
 
@@ -96,6 +113,7 @@ See [PERFORMANCE_QUICK_REF.md](PERFORMANCE_QUICK_REF.md) for detailed analysis.
 
 - **[QUICKSTART.md](QUICKSTART.md)** - 5-minute setup
 - **[setup-guide.md](setup-guide.md)** - Complete setup guide
+- **[AUTO_SYNC.md](AUTO_SYNC.md)** - 🔄 Auto-sync with auto-reconnect
 - **[PERFORMANCE_QUICK_REF.md](PERFORMANCE_QUICK_REF.md)** - ⚡ Waktu estimasi & tips
 - **[PERFORMANCE.md](PERFORMANCE.md)** - Deep dive performance analysis
 
